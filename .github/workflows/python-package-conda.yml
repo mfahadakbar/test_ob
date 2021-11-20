@@ -22,6 +22,8 @@ jobs:
       run: |
         conda env update --file environment.yml --name base
         python setup.py develop
+        pwd
+        ls -la
     - name: Lint with flake8
       run: |
         conda install flake8
@@ -31,5 +33,5 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        conda install pytest
-        pytest
+        # conda install pytest
+        pytest -v
